@@ -52,4 +52,12 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            // Archive the built JAR or WAR file
+            archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
+            // Publish test results
+            junit '**/target/surefire-reports/*.xml'
+        }
+    }
 }
