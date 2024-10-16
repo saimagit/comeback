@@ -47,7 +47,7 @@ pipeline {
                 script {
                     // Run the Docker container
                     bat 'docker run -d -p 8081:8080 comeback'
-                    echo 'i did it'
+                    echo 'i did it and it will woork'
                 }
             }
         }
