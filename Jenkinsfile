@@ -1,5 +1,15 @@
 pipeline {
     agent any
+    
+    tools {
+        maven 'Maven 3.9.9'  // Specify the Maven version
+        jdk 'Java 11'        // Specify the JDK version
+    }
+
+    environment {
+        DOCKER_IMAGE = 'comeback'
+    }
+
 
 
  stages {
@@ -35,7 +45,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container
-                    sh 'docker run -d -p 8080:8080 your-app-name'
+                    sh 'docker run -d -p 8080:8080 comeback'
                 }
             }
         }
