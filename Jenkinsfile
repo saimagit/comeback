@@ -21,14 +21,14 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
          stage('Test') {
             steps {
                 script {
                     // Run unit tests
-                    sh 'mvn test'
+                    bat 'mvn test'
                 }
             }
         }
@@ -36,7 +36,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image
-                    sh 'docker build -t comeback .'
+                    bat 'docker build -t comeback .'
                 }
             }
         }
@@ -45,7 +45,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container
-                    sh 'docker run -d -p 8080:8080 comeback'
+                    bat 'docker run -d -p 8080:8080 comeback'
                 }
             }
         }
