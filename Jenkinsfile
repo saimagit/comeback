@@ -29,13 +29,14 @@ pipeline {
                 script {
                     // Run unit tests
                     bat 'mvn test'
+                    echo 'i did it'
                 }
             }
         }
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build the Docker image
+                    /// Build the Docker image
                     bat 'docker build -t comeback .'
                 }
             }
@@ -45,7 +46,8 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container
-                    bat 'docker run -d -p 8080:8080 comeback'
+                    bat 'docker run -d -p 8081:8080 comeback'
+                    echo 'i did it and it will woork'
                 }
             }
         }
