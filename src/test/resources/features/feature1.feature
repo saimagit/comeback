@@ -1,3 +1,5 @@
+ @doglist
+ 
 #Author: your.email@your.domain.com
 #Keywords Summary :
 #Feature: List of scenarios.
@@ -20,9 +22,17 @@
 Feature: To validate the output of the API
   
 
-  #@tag1
+ 
   Scenario: status code in the response is 200
     Given The url is correct
     When I hit the API
     Then the status code is 200
     And body is correct
+    
+    Scenario: the bakharwal is present in the list of breeds
+    #When I hit the API
+    #Then the status code is 200
+    And bakharwal is present in the response body
+    And bulldog has correct countries "english" "boston" "french"
+    
+    
