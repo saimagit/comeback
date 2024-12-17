@@ -30,11 +30,11 @@ public class PlaywriteTestSteps {
     
     Page page = context.newPage();
 	
-	@Given("I am on walmart CA home page")
-	public void Iam_on_walmart_CA_home_pagel() {
+	@Given("I am on ABC CA home page")
+	public void Iam_on_ABC_CA_home_pagel() {
 
         // Navigate to a URL
-        page.navigate("https://www.walmart.ca");
+        page.navigate("https://www.abc.ca");
         System.out.println("Page title: " + page.title());
        // page.fill("//textarea[@aria-label='Search']", "saima tak");
 		
